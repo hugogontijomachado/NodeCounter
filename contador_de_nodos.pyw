@@ -72,8 +72,12 @@ class Main(Tk):
         super().__init__()
         self.title('Contador de Nodos')
         self.geometry('400x250+50+50')
-        try:self.wm_iconbitmap(r'icon.ico')
-        except:pass
+        try:
+            icon_path = os.path.dirname(os.path.abspath(__file__))
+            self.wm_iconbitmap(os.path.join(icon_path, r'contador_de_nodos.ico'))
+        except:
+            pass
+
 
         #self.resizable(False, False)
         self.bg = "#dde"
