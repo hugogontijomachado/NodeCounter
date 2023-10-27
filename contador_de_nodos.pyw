@@ -25,7 +25,7 @@ def check_and_install_libraries():
        
         import subprocess
         #install_process = subprocess.Popen(["pip", "install", "pandas openpyxl"])
-        subprocess.check_call(["pip", "install", "pandas"])
+        subprocess.check_call(["pip", "install", "pandas", "openpyxl"])
 
         root.check_install_label.destroy()
         root.build_main_frame()
@@ -63,7 +63,8 @@ class CustomMenu(Menu):
 
 
     def how_to_use(self):
-        os.startfile("manual.pdf")
+        basepath = os.path.dirname(os.path.abspath(__file__))        
+        os.startfile(os.path.join(basepath, "manual.pdf"))
         
 
 class Main(Tk):
